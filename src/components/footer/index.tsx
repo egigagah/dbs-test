@@ -1,78 +1,58 @@
-import React, { CSSProperties } from "react";
-import Image from "next/image";
-import { Flex, Center } from "@chakra-ui/react";
+import React from "react";
+import { Flex, Center, Text } from "@chakra-ui/react";
+import {
+    RiGithubFill,
+    RiTwitterFill,
+    RiLinkedinFill,
+    RiGlobalFill,
+    RiNpmjsFill,
+} from "react-icons/ri";
+import { LinkedIcon } from "..";
 
 export const Footer: React.FC = () => {
-    const iconStyle: CSSProperties = {
-        fontSize: 22,
-        color: "#fff",
-        marginRight: "0.25rem",
-        marginLeft: "0.25rem",
-    };
     return (
         <Center bg="main.100" py={10}>
             <Flex flexDirection="column">
                 <a
-                    href="https://github.com/pankod"
+                    href="https://github.com/egigagah"
                     target="_blank"
-                    data-testid="pankod-logo"
+                    data-testid="copyright"
                 >
-                    <Image
-                        src="/icons/pankod-icon.svg"
-                        alt="pankod"
-                        width="140"
-                        height="28"
-                    />
+                    <Text mb="0" fontSize="xl" color="white" fontWeight="bold">
+                        Egi Gagah Brilliant &copy; 2023
+                    </Text>
                 </a>
-                <Flex mt={5} data-testid="icons-container">
-                    <a
-                        href="https://github.com/pankod"
+                <Flex
+                    mt={5}
+                    data-testid="icons-container"
+                    justifyContent="center"
+                    gap="4"
+                >
+                    <LinkedIcon
+                        icon={RiGithubFill}
+                        href="https://github.com/egigagah"
                         target="_blank"
-                        style={iconStyle}
-                    >
-                        <Image
-                            src="/icons/github-icon.svg"
-                            alt="github"
-                            width="28"
-                            height="29"
-                        />
-                    </a>
-                    <a
-                        href="https://twitter.com/PankodDev"
+                    />
+                    <LinkedIcon
+                        icon={RiTwitterFill}
+                        href="https://twitter.com/egggii"
                         target="_blank"
-                        style={iconStyle}
-                    >
-                        <Image
-                            src="/icons/twitter-icon.svg"
-                            alt="twitter"
-                            width="28"
-                            height="28"
-                        />
-                    </a>
-                    <a
-                        href="https://www.youtube.com/channel/UCBGOeQkv1XW3ptryLWlQbAQ"
+                    />
+                    <LinkedIcon
+                        icon={RiGlobalFill}
+                        href="https://egigagah.vercel.app/"
                         target="_blank"
-                        style={iconStyle}
-                    >
-                        <Image
-                            src="/icons/youtube-icon.svg"
-                            alt="youtube"
-                            width="28"
-                            height="29"
-                        />
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/company/pankod-yazilim-ve-danismanlik/"
+                    />
+                    <LinkedIcon
+                        icon={RiLinkedinFill}
+                        href="https://www.linkedin.com/in/egi-gagah-brilliant-b0b940132/"
                         target="_blank"
-                        style={iconStyle}
-                    >
-                        <Image
-                            src="/icons/linkedin-icon.svg"
-                            alt="linkedin"
-                            width="28"
-                            height="32"
-                        />
-                    </a>
+                    />
+                    <LinkedIcon
+                        icon={RiNpmjsFill}
+                        href="https://www.npmjs.com/package/react-ide-component"
+                        target="_blank"
+                    />
                 </Flex>
             </Flex>
         </Center>

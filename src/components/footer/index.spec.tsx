@@ -1,26 +1,14 @@
 import { render } from "@test";
-
 import { Footer } from "./index";
 
-describe("Footer component testing with testing-library", () => {
+describe("Footer component testing", () => {
     it("renders without crashing", () => {
-        const component = render(<Footer />);
+        const { container, getByTestId } = render(<Footer />);
 
-        expect(component).toBeTruthy();
-    });
-
-    it("renders pankod logo and directed to the correct url", () => {
-        const { getByTestId } = render(<Footer />);
-
-        expect(getByTestId("pankod-logo").getAttribute("href")).toStrictEqual(
-            "https://github.com/pankod",
+        expect(container).toBeTruthy();
+        expect(getByTestId("copyright")).toHaveTextContent(
+            "Egi Gagah Brilliant © 2023",
         );
-    });
-
-    it("should render 4 icons successfully", () => {
-        const { getByTestId } = render(<Footer />);
-
-        const icons = getByTestId("icons-container");
-        expect(icons.children).toHaveLength(4);
+        expect(getByTestId("icons-container").children).toHaveLength(5);
     });
 });

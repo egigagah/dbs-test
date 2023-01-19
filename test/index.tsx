@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import {
     render as baseRender,
     RenderOptions,
@@ -16,7 +16,7 @@ import theme from "@definitions/chakra/theme";
  * please visit https://testing-library.com/docs/react-testing-library/setup
  */
 
-export const AllTheProviders = ({ children }) => {
+export const AllTheProviders = ({ children }: { children: ReactNode }) => {
     return (
         <>
             <ChakraProvider theme={theme}>{children}</ChakraProvider>
