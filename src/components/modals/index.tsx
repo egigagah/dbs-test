@@ -43,7 +43,7 @@ export function SimpleModal({ isOpen, onClose, data }: SimpleModalProps) {
                                         value={
                                             moment(
                                                 item.dob,
-                                                "DD-MM-YYYY",
+                                                "YYYY-MM-DD",
                                             ).format("D-MMM-YYYY") as string
                                         }
                                     />
